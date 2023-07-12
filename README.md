@@ -1,8 +1,8 @@
-# matrix-for-cli
+# Matrix
 Class Matrix written in C++.  
 There is no try-catch blocks.  
 Just keep rules in heart. : )  
-## public interface
+## Public Interface
 - void MakeZero()
 - void MakeIdentity()
 - void MakeFromSequence(const double* sequence)
@@ -11,10 +11,10 @@ Just keep rules in heart. : )
 - Matrix Transpose()
 - Matrix AdjointMatrix()
 - Matrix Inverse()
-## example
+## Example
 main.cpp
 ```c++
-include "matrix.h"
+#include "matrix.h"
 
 int main()
 {
