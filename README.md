@@ -1,32 +1,30 @@
-# Matrix
+# Matrix(Math)
 Class Matrix written in C++.  
-There is no try-catch blocks.  
-Just keep rules in heart. : )  
-## Public Interface
-- void MakeZero()
-- void MakeIdentity()
-- void MakeFromSequence(const double* sequence)
+## Public Interfaces
+- void MakeItZero()
+- void MakeItIdentity()
+- void MakeItFromSequence(const double* sequence)
 - double Determinant()
-- double Cofactor(const int& x, const int& y)
 - Matrix Transpose()
+- Matrix Submatrix(const int& x, const int& y)
 - Matrix AdjointMatrix()
 - Matrix Inverse()
-## Example
-main.cpp
+## Examples
+### Test1
 ```c++
 #include "matrix.h"
 
 int main()
 {
     Matrix A{2};
-    double seq[]{1., 2., 3., 4.};
+    double seq[] = {1., 2., 3., 4.};
     A.MakeFromSequence(seq);
     Matrix B{A * A.Transpose()};
     std::cout << B;
     std::cout << A.Inverse();
 }
 ```
-output:
+-->
 ```plaintext 
 5.000000	11.000000	
 11.000000	25.000000	
@@ -34,4 +32,25 @@ output:
 -2.000000	1.000000	
 1.500000	-0.500000
 
+```
+### Test1
+```c++
+#include "matrix.h"
+
+int main() {
+  double seq[] = {1., 2., 3., 4., 5., 6., 7., 8., 9.};
+  Matrix mtx{3, 3};
+  mtx.MakeItFromSequence(seq);
+  std::cout << mtx;
+  try {
+    mtx.Inverse();
+  } catch (const char *s) {
+    std::cout << s <<std::endl;
+  }
+  return 0;
+}
+```
+-->
+```plaintext 
+Determinant is zero. Failed to Inverse().
 ```
