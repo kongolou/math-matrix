@@ -20,20 +20,20 @@ int main()
     double seq[] = {1., 2., 3., 4.};
     A.MakeFromSequence(seq);
     Matrix B{A * A.Transpose()};
-    std::cout << B;
+    std::cout << (A + B);
     std::cout << A.Inverse();
 }
 ```
 -->
 ```plaintext 
-5.000000	11.000000	
-11.000000	25.000000	
+6.000000	13.000000	
+14.000000	29.000000	
 
 -2.000000	1.000000	
 1.500000	-0.500000
 
 ```
-### Test1
+### Test2
 ```c++
 #include "matrix.h"
 
